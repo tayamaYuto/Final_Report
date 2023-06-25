@@ -23,7 +23,13 @@ def forward(x,y,h):
 for i in tqdm(range(iteration)):
     x_iplus1,y_iplus1=forward(x[i],y[i],h)
     x.append(x_iplus1)
-    y.append(y_iplus1)    
+    y.append(y_iplus1)
+
+    if i % 10000 == 0:
+          fig=plt.figure(figsize=(10,4))
+          ax=fig.subplots()
+          ax.scatter(x,y,s=0.01,color="black")
+          plt.savefig(f"save/sin_{i}.png")
 
 fig=plt.figure(figsize=(10,4))
 ax=fig.subplots()
