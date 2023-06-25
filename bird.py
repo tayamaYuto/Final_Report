@@ -25,13 +25,8 @@ for i in tqdm(range(iteration)):
     x.append(x_iplus1)
     y.append(y_iplus1)
 
-    if i % 10000 == 0:
+    if i % 5000 == 0:
           fig=plt.figure(figsize=(10,4))
           ax=fig.subplots()
           ax.scatter(x,y,s=0.01,color="black")
           plt.savefig(f"save/sin_{i}.png")
-
-fig=plt.figure(figsize=(10,4))
-ax=fig.subplots()
-ax.scatter(x,y,s=0.01,color="black")
-plt.show()
